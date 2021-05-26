@@ -4,7 +4,7 @@ using System.Text;
 
 namespace A3FINAL
 {
-    interface IComparable
+    class Computer
     {
 
     }

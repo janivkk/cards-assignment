@@ -1,46 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace A3FINAL
 {
-    class Game
+    class Game : DeckEnum
     {
-        private int score;
-        protected int round;
+        private int tillTheEnd = 21;
 
-        //Constructor where the game actually happens
-        public void Gameplay()
+        public override void WelcomeMessage()
         {
+            //base.WelcomeMessage(); //Unchanged output from DeckEnum class
+            Console.Write("Playing now...");
+        }
+
+        public void Play()
+        {
+            Console.Write("\n");
+            WelcomeMessage();
+
+            DeckEnum d = new DeckEnum();
+            Console.Write("\n\nShuffling the deck...");
+            Console.Write("\n\nP1 (you): \n");
+            d.Hand();
+            Console.Write("\n\nP2 (computer): \n");
+            d.Hand();
+
             try
             {
-                while (round == 5)
-                {
-                    Deck d = new Deck();
-                    d.Hand();
-
-                    //Exception if not enough space & writes the score to a file
-                    try
-                    {
-                        using (StreamWriter wt = new StreamWriter("score.txt"))
-                        {
-                            wt.WriteLine("Score: " + score);
-                        }
-                    }
-                    catch (IOException)
-                    {
-                        Console.Write("Not enough space on your computer");
-                    }
-                    round++;
-                }
+                Console.Write("\n\nChoose what card to play: ");
+                string playerCard = Console.ReadLine();
             }
-            catch (Exception e)
+            catch (ArgumentException)
             {
-                Console.Write("An error occurred: ", e);
-                throw;
+
             }
+
+            while (tillTheEnd < 0)
+            {
+
+            }
+
+            Console.ReadKey();
         }
     }
 }

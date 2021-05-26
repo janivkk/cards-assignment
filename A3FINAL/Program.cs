@@ -1,19 +1,16 @@
 ﻿using System;
 
 namespace A3FINAL
+//Extension Authorization Code: CLNJLMKDJCJMX6V0 
 {
     class Program
     {
         static void Main(string[] args)
         {
-            /*Game g = new Game();
-            g.Gameplay();
-            Test t = new Test();
-            t.Testing();*/
-
-            DeckEnum d = new DeckEnum();
-            Console.Write($"P1: {d.Hand()}");
-            Console.ReadKey();
+            DeckEnum e = new DeckEnum();
+            e.WelcomeMessage();
+            Game g = new Game();
+            g.Play();
         }
     }
 }

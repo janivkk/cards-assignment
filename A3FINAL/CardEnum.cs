@@ -7,24 +7,24 @@ namespace A3FINAL
     //Enumerating cards
     public enum eCard
     {
-        Two = 2, Three = 3, Four = 4, Five = 5, Six = 6, Seven = 7, Eight = 8,
-        Nine = 9, Ten = 10, Jack = 11, Queen = 12, King = 13, Ace = 14
+        Two, Three, Four, Five, Six, Seven, Eight,
+        Nine, Ten, J, Q, K, A
     }
 
     //Enumerating suits
     public enum eSuit
     {
-        Hearts, Diamonds, Clubs, Spades
+        H, C, D, S //hearts, clubs, diamonds, spades
     }
 
-    class CardEnum
+    class CardEnum : IComparable<CardEnum>
     {
-        public eCard face;
-        public eSuit suit;
+        //public eCard face;
+        //public eSuit suit;
 
         //Encapsulating
-        //public eCard _faceC { get; set; }
-        //public eSuit _suitC { get; set; }
+        protected eCard face { get; set; }
+        protected eSuit suit { get; set; }
         
         //Constructor
         public CardEnum(eCard FaceCard, eSuit SuitCard)
@@ -33,10 +33,25 @@ namespace A3FINAL
             suit = SuitCard;
         }
 
+        //Initilises the interface of comparing values together, IComparable<T>
+        public int CompareTo(CardEnum o)
+        {
+            if (suit > o.suit)
+            {
+                return 1;
+            }
+
+            if (suit < o.suit)
+            {
+                return -1;
+            }
+            return face > o.face ? 1 : -1;
+        }
+
         //Override, displays all the enumaratated cards
         public override string ToString()
         {
-            return $"{face} of {suit}";
+            return $"{face} {suit}";
         }
     }
 }
