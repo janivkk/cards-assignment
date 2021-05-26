@@ -11,6 +11,8 @@ namespace A3FINAL
             Test t = new Test();
             t.Testing();*/
 
+            DeckEnum d = new DeckEnum();
+            Console.Write($"P1: {d.Hand()}");
             Console.ReadKey();
         }
     }

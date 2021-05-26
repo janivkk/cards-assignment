@@ -19,8 +19,8 @@ namespace A3FINAL
 
     class CardEnum
     {
-        public eCard _faceC;
-        public eSuit _suitC;
+        public eCard face;
+        public eSuit suit;
 
         //Encapsulating
         //public eCard _faceC { get; set; }
@@ -29,14 +29,14 @@ namespace A3FINAL
         //Constructor
         public CardEnum(eCard FaceCard, eSuit SuitCard)
         {
-            _faceC = FaceCard;
-            _suitC = SuitCard;
+            face = FaceCard;
+            suit = SuitCard;
         }
 
         //Override, displays all the enumaratated cards
         public override string ToString()
         {
-            return $"{_faceC} of {_suitC}";
+            return $"{face} of {suit}";
         }
     }
 }

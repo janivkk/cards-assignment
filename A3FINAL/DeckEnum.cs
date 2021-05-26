@@ -6,12 +6,12 @@ namespace A3FINAL
 {
     class DeckEnum : IComparable
     {
-        readonly List<CardEnum> DeckListEnum;
+        public readonly List<CardEnum> DeckListEnum = new List<CardEnum>();
 
         //Constructor
         public DeckEnum()
         {
-            DeckListEnum = new List<CardEnum>();
+            //DeckListEnum = new List<CardEnum>();
             int s = Enum.GetNames(typeof(eSuit)).Length;
             int c = Enum.GetNames(typeof(eCard)).Length;
 
@@ -19,7 +19,7 @@ namespace A3FINAL
             {
                 for (int j = 0; j < c; j++)
                 {
-                    DeckListEnum.Add(new CardEnum((eCard)_faceC, (eSuit)_suitC));
+                    DeckListEnum.Add(new CardEnum((eCard)face, (eSuit)suit));
                 }
             }
 
@@ -42,6 +42,7 @@ namespace A3FINAL
             }
         }
 
+        //Hand for a player
         public void Hand()
         {
             foreach (CardEnum cardDeck in DeckListEnum)
