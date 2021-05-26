@@ -7,9 +7,10 @@ namespace A3FINAL
         static void Main(string[] args)
         {
             /*Game g = new Game();
-            g.Gameplay();*/
+            g.Gameplay();
             Test t = new Test();
-            t.Testing();
+            t.Testing();*/
+
             Console.ReadKey();
         }
     }

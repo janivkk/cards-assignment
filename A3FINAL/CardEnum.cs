@@ -19,27 +19,24 @@ namespace A3FINAL
 
     class CardEnum
     {
+        public eCard _faceC;
+        public eSuit _suitC;
+
         //Encapsulating
-        public eCard FaceCard
-        {
-            get; set;
-        }
-        public eSuit SuitCard
-        {
-            get; set;
-        }
+        //public eCard _faceC { get; set; }
+        //public eSuit _suitC { get; set; }
         
         //Constructor
         public CardEnum(eCard FaceCard, eSuit SuitCard)
         {
-            FaceCard = eCard;
-            eSuit = SuitCard;
+            _faceC = FaceCard;
+            _suitC = SuitCard;
         }
 
         //Override, displays all the enumaratated cards
         public override string ToString()
         {
-            return $"{eCard} of {eSuit}";
+            return $"{_faceC} of {_suitC}";
         }
     }
 }
