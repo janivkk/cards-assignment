@@ -28,17 +28,25 @@ namespace A3FINAL
 
             try
             {
-                Console.Write("\n\nChoose what card to play: ");
-                string playerCard = Console.ReadLine();
+                
             }
             catch (ArgumentException)
             {
 
             }
 
-            while (tillTheEnd < 0)
+            while ()
             {
-
+                /* Console.Write("\n\nChoose what card to play: ");
+                   string playerCard = Console.ReadLine();
+                 * 
+                 * if (playerCard > computerCard)
+                 
+                 else if (playerCard < computerCard)
+                
+                 else if (playerCard == computerCard) give point
+                
+                 else, throw exception*/
             }
 
             Console.ReadKey();

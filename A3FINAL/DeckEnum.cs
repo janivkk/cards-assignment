@@ -4,7 +4,7 @@ using System.Text;
 
 namespace A3FINAL
 {
-    class DeckEnum
+    class DeckEnum : TimeComplexity
     {
         //Class list
         public readonly List<CardEnum> DeckListEnum = new List<CardEnum>();
@@ -36,6 +36,7 @@ namespace A3FINAL
                 CardEnum r_card = DeckListEnum[i];
                 DeckListEnum[i] = DeckListEnum[x];
                 DeckListEnum[x] = r_card;
+                timeThatTakesToGetThrough++;
             }
         }
 
@@ -51,15 +52,26 @@ namespace A3FINAL
 
         //Hand for a player
         //-- need to give a hand of 10 to player
-        public void HandTen()
+        public void Hand()
         {
-            for (int i = 0; i < 10 ; i++)
+            //If there's an issue with range, throw an exception
+            try
             {
-                Console.Write(DeckListEnum[i] + " | ");
+                Shuffle();
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.Write(DeckListEnum[i] + " | ");
+                }
             }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.Write("out of range!");
+                throw;
+            }
+
         }
 
-        public void Hand()
+        public void HandT()
         {
             /*Console.Write("\nDeck of cards: ")
             HandTen();

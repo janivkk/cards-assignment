@@ -4,11 +4,11 @@ using System.Text;
 
 namespace A3FINAL
 {
-    //Enumerating cards
+    //Enumerating cards with values
     public enum eCard
     {
-        Two, Three, Four, Five, Six, Seven, Eight,
-        Nine, Ten, J, Q, K, A
+        Two = 2, Three = 3, Four = 4, Five = 5, Six = 6, Seven = 7, Eight = 8,
+        Nine = 9, Ten = 10, J = 11, Q = 12, K = 13, A = 14
     }
 
     //Enumerating suits
@@ -19,9 +19,6 @@ namespace A3FINAL
 
     class CardEnum : IComparable<CardEnum>
     {
-        //public eCard face;
-        //public eSuit suit;
-
         //Encapsulating
         protected eCard face { get; set; }
         protected eSuit suit { get; set; }
