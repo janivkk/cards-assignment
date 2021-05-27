@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace A3FINAL
 {
-    class TimeComplexity
+    class TimeComplexity : DeckEnum
     {
-        public int timeThatTakesToGetThrough { get; set; }
-
         public void SaveTheFindings()
         {
-
+            string saveTimeTaken = timeThatTakesToGetThrough.ToString();
+            File.WriteAllText("timecomplexity.txt", saveTimeTaken);
         }
     }
 }

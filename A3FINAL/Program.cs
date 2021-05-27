@@ -11,6 +11,8 @@ namespace A3FINAL
             e.WelcomeMessage();
             Game g = new Game();
             g.Play();
+            TimeComplexity tcomplex = new TimeComplexity();
+            tcomplex.SaveTheFindings();
         }
     }
 }

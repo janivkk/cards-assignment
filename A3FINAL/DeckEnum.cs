@@ -4,8 +4,10 @@ using System.Text;
 
 namespace A3FINAL
 {
-    class DeckEnum : TimeComplexity
+    class DeckEnum
     {
+        public int timeThatTakesToGetThrough { get; set; }
+
         //Class list
         public readonly List<CardEnum> DeckListEnum = new List<CardEnum>();
 
@@ -44,7 +46,7 @@ namespace A3FINAL
         public void Sort() => DeckListEnum.Sort();
         public void Sort(IComparer<CardEnum> com) => DeckListEnum.Sort(com);
 
-        //Polymorphism (many forms of an method/object)
+        //Inheritance
         public virtual void WelcomeMessage()
         {
             Console.Write("Welcome to the card game.");
@@ -69,17 +71,6 @@ namespace A3FINAL
                 throw;
             }
 
-        }
-
-        public void HandT()
-        {
-            /*Console.Write("\nDeck of cards: ")
-            HandTen();
-            Console.Write("\n")*/
-            for (int j = 0; j < 2; j++)
-            {
-                Console.Write(DeckListEnum[j] + " | ");
-            }
         }
     }
 }
